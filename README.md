@@ -13,7 +13,7 @@ Historial de trabajo:
 Por hacer:
 
 - Comprobar anotaciones en el proyecto .py
-- Localizar una API pública con recetas de cocina
+- Localizar una API pública con recetas de cocina (posible: https://spoonacular.com/food-api/console#Dashboard)
 
 IMPORTANTE:
 Ejecutar el programa solamente si todos los archivos necesarios se encuentran dentro del mismo directorio.

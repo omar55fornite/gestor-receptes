@@ -49,6 +49,9 @@ def afegir(): # -- Funció per afegir receptes noves --
 
             print("\nRecepta guardada correctament.\n")
 
+def llegir():
+    print("\nW.I.P...\n") # Acabar funció llegir
+
 
 # -- Cos principal del codi --
 
@@ -66,3 +69,6 @@ select = int(input("\nSeleccione una opció i polse [ENTER]\n"))
 
 if select == 1:
     afegir()
+
+if select == 2:
+    llegir()
