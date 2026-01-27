@@ -10,6 +10,9 @@ Historial de trabajo:
 
 20/1/26 - Agregada función que crea la carpeta 'Receptes' si no existe
 
+27/1/26 - Agregada con errores tipográficos menores en .csv y con errores mayores en la lectura de .json la función 'llegir()'
+        - Añadido un bucle de menú y la posibilidad select = 4 de salir del programa.
+
 Por hacer:
 
 - Comprobar anotaciones en el proyecto .py
