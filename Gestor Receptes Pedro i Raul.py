@@ -102,17 +102,19 @@ def buscar():
             print("\n-- Llista de Receptes --\n")
             counter = int(0)
             for recipe in data['results']:
-                counter = counter + 1
-                print(f"{counter}. {recipe['title']}")
+                recipe_id = recipe['id']
+                
+                print(f"{recipe_id}. {recipe['title']}")
             selectrecipe = int(input("\nSeleccione el numero de recepta...\n"))
-            params = {
+            params2 = {
                 'apiKey' : api_key,
-                'query': searchterm,
+                'query': selectrecipe,
                 'number' : 1
             }
-            req = requests.get(api_url, params=params)
+            req = requests.get(api_url, params=params2)
             for recipe in data['results']:
-                print(recipe[]) # -- Corregir busqueda individual --
+                
+                print(recipe['title']) # -- Corregir busqueda individual --
             
 
         else:
@@ -153,5 +155,8 @@ while menu == True:
         buscar()
 
     if select == 4:
+        print("\nFunció en desenvolupoament... Gràcies.\n")
+
+    if select == 5:
         menu = False
         print("\n Eixint del programa... Gràcies.\n")

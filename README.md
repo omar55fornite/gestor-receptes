@@ -13,6 +13,12 @@ Historial de trabajo:
 27/1/26 - Agregada con errores tipográficos menores en .csv y con errores mayores en la lectura de .json la función 'llegir()'
         - Añadido un bucle de menú y la posibilidad select = 4 de salir del programa.
 
+(3-5)/2/26 - Agregada búsqueda en internet de recetas con errores menores en el formato. Función en desarrollo
+        - Corregidos errores tipográficos no referentes a la escritura de .json
+        - Agregadas anotaciones sobre el proceso de desarrollo.
+        - Realizada presentación del proyecto en clase.
+
+
 Por hacer:
 
 - Comprobar anotaciones en el proyecto .py
@@ -20,3 +26,6 @@ Por hacer:
 
 IMPORTANTE:
 Ejecutar el programa solamente si todos los archivos necesarios se encuentran dentro del mismo directorio.
+
+
+Repositorio de GitHub: https://github.com/omar55fornite/gestor-receptes
