@@ -1,6 +1,8 @@
 import csv
+
 import os
 import json
+import requests
 directory = os.path.dirname(os.path.realpath(__file__))
     
 
@@ -78,6 +80,49 @@ def llegir():  # -- Funcions bàsiques de lectura dels arxius. Error en .json --
     except Exception as erread:
         print(f"Error en la lectura... ERROR CODE: {erread}")
 
+def buscar():
+    searchterm = str(input("\n Introdueix la paraula clau a buscar...\n"))
+    api_url = 'https://api.spoonacular.com/recipes/complexSearch'
+    api_key = 'e951ca95e5db481588ad68a3cf9457cd'
+
+    # -- Codi corregit gràcies a Gemini AI --
+    params = {
+        'apiKey': api_key,
+        'query': searchterm,
+        'number': 10       # -- Límit de resultats --
+    }
+
+    try:
+        req = requests.get(api_url, params=params)
+        
+        if req.status_code == 200:
+            print("\nConnexió realitzada amb èxit. \n")
+            data = req.json() 
+            
+            print("\n-- Llista de Receptes --\n")
+            counter = int(0)
+            for recipe in data['results']:
+                counter = counter + 1
+                print(f"{counter}. {recipe['title']}")
+            selectrecipe = int(input("\nSeleccione el numero de recepta...\n"))
+            params = {
+                'apiKey' : api_key,
+                'query': searchterm,
+                'number' : 1
+            }
+            req = requests.get(api_url, params=params)
+            for recipe in data['results']:
+                print(recipe[]) # -- Corregir busqueda individual --
+            
+
+        else:
+            print(f"\nError en la connexió. Status Code: {req.status_code}")
+            print(req.text)
+
+    except Exception as errcon:
+        print(f"Error en la connexió, codi d'error: {errcon}")
+
+
 
 
 
@@ -103,6 +148,9 @@ while menu == True:
 
     if select == 2:
         llegir()
+
+    if select == 3:
+        buscar()
 
     if select == 4:
         menu = False
