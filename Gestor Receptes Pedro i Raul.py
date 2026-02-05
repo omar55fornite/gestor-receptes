@@ -4,7 +4,7 @@ import os
 import json
 import requests
 directory = os.path.dirname(os.path.realpath(__file__))
-    
+import matplotlib
 
 def afegir(): # -- Funció per afegir receptes noves --
     print("\nAfegir receptes...\n")
@@ -102,19 +102,17 @@ def buscar():
             print("\n-- Llista de Receptes --\n")
             counter = int(0)
             for recipe in data['results']:
-                recipe_id = recipe['id']
-                
-                print(f"{recipe_id}. {recipe['title']}")
+                counter = counter + 1
+                print(f"{counter}. {recipe['title']}")
             selectrecipe = int(input("\nSeleccione el numero de recepta...\n"))
-            params2 = {
+            params = {
                 'apiKey' : api_key,
-                'query': selectrecipe,
+                'query': searchterm,
                 'number' : 1
             }
-            req = requests.get(api_url, params=params2)
+            req = requests.get(api_url, params=params)
             for recipe in data['results']:
-                
-                print(recipe['title']) # -- Corregir busqueda individual --
+                print(recipe["d"]) # -- Corregir busqueda individual --
             
 
         else:
@@ -123,6 +121,27 @@ def buscar():
 
     except Exception as errcon:
         print(f"Error en la connexió, codi d'error: {errcon}")
+
+import matplotlib.pyplot as plt
+
+# -- Asistencia de ia a solucionar una duda (poner y rectificar datos y etiquetas de mas de pulir el gráfico) --
+def mostrar_grafic_busquedes():
+    # Datos de ejemplo: Nombres de recetas y su frecuencia de búsqueda
+    receptes = ["Paella", "Tortilla", "Hummus", "Pizza", "Sushi"]
+    num_busquedes = [45, 30, 12, 55, 20] # Datos ficticios de popularidad
+
+    # Configuración del gráfico
+    plt.figure(figsize=(10, 6))
+    plt.bar(receptes, num_busquedes, color='orange', edgecolor='black')
+
+    # Personalización de etiquetas
+    plt.title("Popularitat de les Receptes (Número de Busques)", fontsize=14)
+    plt.xlabel("Nom de la Recepta", fontsize=12)
+    plt.ylabel("Vegades buscada", fontsize=12)
+
+    # Mostrar el gráfico
+    plt.show()
+
 
 
 
@@ -142,7 +161,7 @@ while menu == True:
     except Exception as errdir:
         print(f"Error de directori. Tracte de solucionar-lo manualment. ERROR CODE: {errdir} ")
 
-    print("\n--GESTOR DE RECEPTES--\n\n 1. Afegir Recepta 2. LLegir Receptes 3. Consultar en Web 4. Eixir del programa")
+    print("\n--GESTOR DE RECEPTES--\n\n 1. Afegir Recepta 2. LLegir Receptes 3. Consultar en Web 4. Gràfic d'Exemple 5. Eixir\n")
     select = int(input("\nSeleccione una opció i polse [ENTER]\n"))
 
     if select == 1:
@@ -153,9 +172,11 @@ while menu == True:
 
     if select == 3:
         buscar()
-
+    
     if select == 4:
-        print("\nFunció en desenvolupoament... Gràcies.\n")
+        # Reemplazamos el código antiguo por la nueva función
+        mostrar_grafic_busquedes()
+        
 
     if select == 5:
         menu = False
