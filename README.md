@@ -14,6 +14,7 @@ Historial de trabajo:
         - Añadido un bucle de menú y la posibilidad select = 4 de salir del programa.
 
 (3-5)/2/26 - Agregada búsqueda en internet de recetas con errores menores en el formato. Función en desarrollo
+        - Dependiente una API pública con recetas de cocina: https://spoonacular.com/food-api/console#Dashboard
         - Corregidos errores tipográficos no referentes a la escritura de .json
         - Agregadas anotaciones sobre el proceso de desarrollo.
         - Realizada presentación del proyecto en clase.
@@ -22,10 +23,10 @@ Historial de trabajo:
 Por hacer:
 
 - Comprobar anotaciones en el proyecto .py
-- Localizar una API pública con recetas de cocina (posible: https://spoonacular.com/food-api/console#Dashboard)
 
 IMPORTANTE:
 Ejecutar el programa solamente si todos los archivos necesarios se encuentran dentro del mismo directorio.
 
 
 Repositorio de GitHub: https://github.com/omar55fornite/gestor-receptes
+API Spoonacular: https://spoonacular.com/food-api/console#Dashboard
